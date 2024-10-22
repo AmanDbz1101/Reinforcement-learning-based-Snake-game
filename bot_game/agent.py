@@ -50,10 +50,7 @@ class Agent:
     
     def get_action(self, state, model):
         final_move = [0, 0, 0]
-        # if random.randint(0, 100) < 1:
-        #     move = random.randint(0, 2)
-        #     final_move[move] = 1
-        # else:
+
         state0 = tf.convert_to_tensor(state, dtype = tf.float32)
         prediction = model(state0)
         move = tf.argmax(prediction, axis = 1).numpy().item()
@@ -79,8 +76,6 @@ def train():
     record = 0
     agent = Agent()
     game = SnakeGame()
-    # model = create_model(11, 256, 3)
-    # model.load_weights("bot_model.h5")
     
     while True:
         model = create_model(11, 256, 3)

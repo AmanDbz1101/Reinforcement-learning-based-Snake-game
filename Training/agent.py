@@ -3,7 +3,7 @@ import random
 import numpy as np 
 from game import SnakeGame, Direction, Point 
 from collections import deque 
-from model import Linear_QNet, QTrainer
+from model import MainModel, Optimizer
 
 MAX_MEMORY = 100_000
 BATCH_SIZE = 200
@@ -15,8 +15,8 @@ class Agent:
         self.epsilon = 0
         self.gamma = 0.9
         self.memory = deque(maxlen=MAX_MEMORY)
-        self.model = Linear_QNet(11, 256, 3)
-        self.trainer = QTrainer(self.model, lr = LR,gamma= self.gamma)
+        self.model = MainModel(11, 256, 3)
+        self.trainer = Optimizer(self.model, lr = LR,gamma= self.gamma)
     
     def get_state(self, game):
         head = game.snake[0]

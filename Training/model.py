@@ -2,9 +2,9 @@ import tensorflow as tf
 from tensorflow.keras import layers
 import numpy as np
 
-class Linear_QNet(tf.keras.Model):
+class MainModel(tf.keras.Model):
     def __init__(self, input_size, hidden_size, output_size):
-        super(Linear_QNet, self).__init__()
+        super(MainModel, self).__init__()
         self.dense1 = layers.Dense(hidden_size, activation='relu', input_shape=(input_size,))
         self.dense2 = layers.Dense(output_size)
 
@@ -25,7 +25,7 @@ class Linear_QNet(tf.keras.Model):
         self.save_weights(file_name)
 
 
-class QTrainer:
+class Optimizer:
     def __init__(self, model, lr, gamma):
         self.lr = lr
         self.gamma = gamma

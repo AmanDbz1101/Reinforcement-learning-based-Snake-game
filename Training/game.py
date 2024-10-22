@@ -6,7 +6,6 @@ import numpy as np
 from math import sqrt 
 pygame.init()
 font = pygame.font.Font(None, 25)
-#font = pygame.font.SysFont('arial', 25)
 
 class Direction(Enum):
     RIGHT = 1
