@@ -1,10 +1,12 @@
 # Reinforcement-Learning-Based-Snake-Game
 This model includes training the snake in Snake game and also using the trained model as a bot.
 
-### Before
-![before](https://github.com/user-attachments/assets/b1b455f4-b68f-437b-a9f9-fc019a18fa9b)
-### After
-![after](https://github.com/user-attachments/assets/560174e4-6815-4d16-a0d8-797b03ad31a2)
+### Here is an example of before training much and after training for some time:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b1b455f4-b68f-437b-a9f9-fc019a18fa9b" width="45%" />
+  <img src="https://github.com/user-attachments/assets/560174e4-6815-4d16-a0d8-797b03ad31a2" width="45%" />
+</p>
+
 
 
 ## 1. Clone the repository
