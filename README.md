@@ -32,7 +32,7 @@ To use the trained model, use model.load_weights to load the data from saved fil
 ```bash
 python -u agent.py
 ```
-# Note: Remember to change the directory before running this code.
+### Note: Remember to change the directory before running this code.
 To get out from Training folder
 ```bash
 cd ..
