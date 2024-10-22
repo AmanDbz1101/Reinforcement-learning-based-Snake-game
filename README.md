@@ -1,5 +1,5 @@
 # Reinforcement-Learning-Based-Snake-Game
-This model includes training the snake in Snake game and also using the trained model as a bot.
+This project includes training model for the snake in Snake game and also using the trained model as a bot.
 
 ### Here is an example of before training much and after training for some time:
 <p align="center">
