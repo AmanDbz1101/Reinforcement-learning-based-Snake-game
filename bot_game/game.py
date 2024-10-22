@@ -3,10 +3,9 @@ import random
 from enum import Enum
 from collections import namedtuple
 import numpy as np
-from math import sqrt 
+# from math import sqrt 
 pygame.init()
 font = pygame.font.Font(None, 25)
-#font = pygame.font.SysFont('arial', 25)
 
 class Direction(Enum):
     RIGHT = 1
@@ -24,7 +23,7 @@ BLUE2 = (0, 100, 255)
 BLACK = (0,0,0)
 
 BLOCK_SIZE = 20
-SPEED = 40
+SPEED = 20
 
 class SnakeGame:
     
@@ -75,35 +74,26 @@ class SnakeGame:
         self.snake.insert(0, self.head)
         
         # 3. check if game over
-        reward = 0
         game_over = False
         if self.is_collision() or self.frame_iteration >100*len(self.snake):
             game_over = True
-            reward = -10
-            return reward, game_over, self.score
+            # input = ("Do you want to play again? ")
+            # if (input == 'y'):
+            #     SnakeGame()
+            return game_over, self.score
             
         # 4. place new food or just move
         if self.head == self.food:
-            reward +=10
             self.score += 1
             self._place_food()
         else:
             self.snake.pop()
-        # distance = sqrt((self.food.x - self.head.x) ** 2 + (self.food.y - self.head.y) ** 2)
-        # if (distance <=50):
-        #     reward += 5
-        # elif (distance <=70):
-        #     reward += 2
-        # elif(distance <=90):
-        #     reward += 1
-        # else:
-        #     reward += -1
-                
+
         # 5. update ui and clock
         self._update_ui()
         self.clock.tick(SPEED)
         # 6. return game over and score
-        return reward, game_over, self.score
+        return game_over, self.score
     
     def is_collision(self, pt = None ):
         if pt is None:
